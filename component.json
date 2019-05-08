@@ -1,0 +1,68 @@
+{
+    "title": "XKCD",
+    "description": "Webcomic of romance, sarcasm, math, and language.",
+    "docsUrl": "https://xkcd.com/json.html",
+    "url": "https://api.apis.guru/v2/specs/xkcd.com/1.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://xkcd.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_info_0_json": {
+            "main": "./lib/actions/get_info_0_json.js",
+            "title": "Fetch current comic and metadata.\n",
+            "description": "Fetch current comic and metadata.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_info_0_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get__comicId__info_0_json": {
+            "main": "./lib/actions/get__comicId__info_0_json.js",
+            "title": "Fetch comics and metadata  by comic id.\n",
+            "description": "Fetch comics and metadata  by comic id.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get__comicId__info_0_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

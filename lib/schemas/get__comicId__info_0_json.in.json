@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "comicId": {
+            "required": true,
+            "type": "number"
+        }
+    }
+}

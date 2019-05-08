@@ -1,0 +1,15 @@
+{
+    "name": "xkcd-com-connector",
+    "version": "1.0.0",
+    "description": "Webcomic of romance, sarcasm, math, and language.",
+    "main": "component.json",
+    "dependencies": {
+        "elasticio-node": "0.0.9",
+        "elasticio-sailor-nodejs": "^2.2.1",
+        "swagger-client": "^3.8.22"
+    },
+    "author": {
+        "name": "Deutsche Telekom AG"
+    },
+    "license": "Apache-2.0"
+}
